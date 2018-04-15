@@ -11,4 +11,7 @@ package pkg3enralla;
  */
 public class Casilla {
     
+    private boolean blanco;
+    private String ficha;
+    
 }
