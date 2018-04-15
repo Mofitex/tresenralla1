@@ -11,7 +11,20 @@ package pkg3enralla;
  */
 public class Casilla {
     
-    private boolean blanco;
+    private boolean casillaBlanca;
     private String ficha;
+
+    public Casilla() {
+        this.casillaBlanca = true;
+    }
+
+    public String getFicha() {
+        return ficha;
+    }
+
+    public void setFicha(String ficha) {
+        casillaBlanca = false;
+        this.ficha = ficha;
+    }
     
 }
