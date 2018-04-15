@@ -10,5 +10,6 @@ package pkg3enralla;
  * @author Mofitex
  */
 public class Juego {
+    private Tablero tablero;
     
 }
