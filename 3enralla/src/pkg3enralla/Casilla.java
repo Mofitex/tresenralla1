@@ -18,6 +18,11 @@ public class Casilla {
         this.casillaBlanca = true;
     }
 
+    public Casilla(String ficha) {
+        this.ficha = ficha;
+        casillaBlanca = false;
+    }
+
     public String getFicha() {
         return ficha;
     }
@@ -26,5 +31,7 @@ public class Casilla {
         casillaBlanca = false;
         this.ficha = ficha;
     }
-    
+    public boolean esBlanca(){
+        return casillaBlanca;
+    }
 }
