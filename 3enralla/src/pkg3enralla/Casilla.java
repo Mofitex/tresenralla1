@@ -12,22 +12,22 @@ package pkg3enralla;
 public class Casilla {
     
     private boolean casillaBlanca;
-    private String ficha;
+    private char ficha;
 
     public Casilla() {
         this.casillaBlanca = true;
     }
 
-    public Casilla(String ficha) {
+    public Casilla(char ficha) {
         this.ficha = ficha;
         casillaBlanca = false;
     }
 
-    public String getFicha() {
+    public char getFicha() {
         return ficha;
     }
 
-    public void setFicha(String ficha) {
+    public void setFicha(char ficha) {
         casillaBlanca = false;
         this.ficha = ficha;
     }
