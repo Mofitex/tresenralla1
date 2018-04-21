@@ -15,13 +15,17 @@ public class Tablero {
     public Tablero() {
         casillas = new Casilla[3][3];
     }
-
-    public Casilla getCasillas(Posicion p) {
-        return casillas[p.getX()][p.getY()];
+    public Tablero(Casilla[][] casillas) {
+        this.casillas = casillas;
+    }
+    public Casilla getCasillas(int x,int y) {
+        return casillas[x][y];
     }
 
     public void setCasilla(char ficha, Posicion p) {
         casillas[p.getX()][p.getY()].setFicha(ficha);
     }
-    
+     public void setCasilla(Casilla casilla, Posicion pos) {
+        casillas[pos.getX()][pos.getY()] = casilla;
+    }
 }

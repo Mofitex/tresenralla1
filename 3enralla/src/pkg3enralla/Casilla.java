@@ -12,7 +12,7 @@ package pkg3enralla;
 public class Casilla {
     
     private boolean casillaBlanca;
-    private char ficha;
+    private char ficha=' ';
 
     public Casilla() {
         this.casillaBlanca = true;

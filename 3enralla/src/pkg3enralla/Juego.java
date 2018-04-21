@@ -11,7 +11,7 @@ package pkg3enralla;
  */
 public class Juego {
     private Tablero tablero;
-
+    private char fichaGanadora;
     public Juego(Tablero tablero) {
         this.tablero = tablero;
     }
@@ -27,13 +27,19 @@ public class Juego {
         return false;
     }
     
+    public char whoWon(){
+        if(someoneWon()==true){
+            return fichaGanadora;
+        }
+        return ' ';
+    }
     
     private boolean Tablerofull() {
         boolean isFull = true;
         for (int x = 0; x < 3; x++) {
             for (int y = 0; y < 3; y++) {
                 Posicion pos = new Posicion(x, y);
-                if (tablero.getCasillas(pos).esBlanca()) {
+                if (tablero.getCasillas(x,y).esBlanca()) {
                     isFull = false;
                 } 
             }
@@ -48,11 +54,9 @@ public class Juego {
         if(fila()==true){
             return true;
         }
-        /*
-        if(diagonal==true){
+        if(diagonal()==true){
             return true;
         }
-        */
         return false;
     }
     
@@ -60,15 +64,19 @@ public class Juego {
         boolean columna = true;
         char aux;
         for (int x = 0; x < 3; x++) {
-            Posicion p = new Posicion(x,0);
-            aux = tablero.getCasillas(p).getFicha();
+            
+            aux = tablero.getCasillas(x,0).getFicha();
+            if(aux==' '){
+                columna=false;
+            }
              for (int y = 0; y < 3; y++) {
-                 Posicion p2 = new Posicion(x,y);
-                 if(tablero.getCasillas(p2).getFicha()!=aux){
+                 
+                 if(tablero.getCasillas(x,y).getFicha()!=aux){
                      columna=false;
                  }  
             }
             if(columna){
+                this.fichaGanadora = aux;
                 return columna;
             }
         }
@@ -80,16 +88,53 @@ public class Juego {
         char aux;
         for (int y = 0; y < 3; y++) {
             Posicion p = new Posicion(0,y);
-            aux = tablero.getCasillas(p).getFicha();
+            aux = tablero.getCasillas(0,y).getFicha();
+            if(aux==' '){
+                fila=false;
+            }
             for (int x = 0; x < 3; x++) {
                 Posicion p2 = new Posicion(x,y);
-                if(tablero.getCasillas(p2).getFicha()!=aux){
+                if(tablero.getCasillas(x,y).getFicha()!=aux){
                     fila=false;
                 }
             }
             if(fila){
+                this.fichaGanadora = aux;
                 return fila;
             }
+        }
+        return false;
+    }
+    
+    private boolean diagonal(){
+        if(diagonalLeft()==true){
+            return true;
+        }
+        if(diagonalRight()==true){
+            return true;
+        }
+        return false;
+    }
+    
+    private boolean diagonalLeft(){
+        if(tablero.getCasillas(0,0).getFicha()=='x'&&tablero.getCasillas(1,1).getFicha()=='x'&&tablero.getCasillas(2,2).getFicha()=='x'){
+            this.fichaGanadora = 'x';
+            return true;
+        }
+        if(tablero.getCasillas(0,0).getFicha()=='o'&&tablero.getCasillas(1,1).getFicha()=='o'&&tablero.getCasillas(2,2).getFicha()=='o'){
+            this.fichaGanadora = 'o';
+            return true;
+        }
+        return false;
+    }
+    private boolean diagonalRight(){
+        if(tablero.getCasillas(2,0).getFicha()=='x'&&tablero.getCasillas(1,1).getFicha()=='x'&&tablero.getCasillas(0,2).getFicha()=='x'){
+            this.fichaGanadora = 'x';
+            return true;
+        }
+         if(tablero.getCasillas(2,0).getFicha()=='o'&&tablero.getCasillas(1,1).getFicha()=='o'&&tablero.getCasillas(0,2).getFicha()=='o'){
+             this.fichaGanadora = 'o';
+             return true;
         }
         return false;
     }
