@@ -11,5 +11,10 @@ package pkg3enralla;
  */
 public class Juego {
     private Tablero tablero;
+
+    public Juego(Tablero tablero) {
+        this.tablero = tablero;
+    }
+    
     
 }
