@@ -61,10 +61,10 @@ public class Juego {
     }
     
     private boolean columna(){
-        boolean columna = true;
+        boolean columna;
         char aux;
         for (int x = 0; x < 3; x++) {
-            
+            columna=true;
             aux = tablero.getCasillas(x,0).getFicha();
             if(aux==' '){
                 columna=false;
@@ -84,9 +84,10 @@ public class Juego {
     }
     
     private boolean fila(){
-        boolean fila = true;
+        boolean fila;
         char aux;
         for (int y = 0; y < 3; y++) {
+            fila=true;
             Posicion p = new Posicion(0,y);
             aux = tablero.getCasillas(0,y).getFicha();
             if(aux==' '){
