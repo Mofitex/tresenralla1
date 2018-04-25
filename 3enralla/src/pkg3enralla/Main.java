@@ -42,70 +42,76 @@ public class Main {
                  Juego j1 = new Juego(t1);
                  while(j1.GameOver()==false){
                      System.out.println("Turno de player 1");
+                     System.out.println("Y");
                      System.out.println("2 "+t1.getCasillas(0,2).getFicha()+" | "+t1.getCasillas(1,2).getFicha()+" | "+t1.getCasillas(2,2).getFicha());
                      System.out.println("  --|---|--");
                      System.out.println("1 "+t1.getCasillas(0,1).getFicha()+" | "+t1.getCasillas(1,1).getFicha()+" | "+t1.getCasillas(2,1).getFicha());
                      System.out.println("  --|---|--");
                      System.out.println("0 "+t1.getCasillas(0,0).getFicha()+" | "+t1.getCasillas(1,0).getFicha()+" | "+t1.getCasillas(2,0).getFicha());
-                     System.out.println("  0   1   2");
+                     System.out.println("  0   1   2   X");
                      System.out.println("");
-                     System.out.println("Inserta la posicion x");
-                     int x = sc.nextInt();
-                     sc.nextLine();
                      System.out.println("Inserta la posicion y");
                      int y = sc.nextInt();
+                     sc.nextLine();
+                     System.out.println("Inserta la posicion x");
+                     int x = sc.nextInt();
                      sc.nextLine();
                      Posicion p1 = new Posicion(x,y);
                      Casilla c1 = new Casilla('x');
                      t1.setCasilla(c1, p1);
                      if(j1.GameOver()==true){
                          if(j1.whoWon()!=' '){
+                            System.out.println("Y");
                             System.out.println("2 "+t1.getCasillas(0,2).getFicha()+" | "+t1.getCasillas(1,2).getFicha()+" | "+t1.getCasillas(2,2).getFicha());
                             System.out.println("  --|---|--");
                             System.out.println("1 "+t1.getCasillas(0,1).getFicha()+" | "+t1.getCasillas(1,1).getFicha()+" | "+t1.getCasillas(2,1).getFicha());
                             System.out.println("  --|---|--");
                             System.out.println("0 "+t1.getCasillas(0,0).getFicha()+" | "+t1.getCasillas(1,0).getFicha()+" | "+t1.getCasillas(2,0).getFicha());
-                            System.out.println("  0   1   2");
-                             char ficha = j1.whoWon();
-                             if(ficha=='x'){
-                                 System.out.println("Ha Ganado el jugador 1");
-                             }
-                             else if(ficha=='o'){
-                                 System.out.println("Ha Ganado el jugador 2");
-                             }
+                            System.out.println("  0   1   2   X");
+                            System.out.println("");
+                            char ficha = j1.whoWon();
+                            if(ficha=='x'){
+                              System.out.println("Ha Ganado el jugador 1");
+                            }
+                            else if(ficha=='o'){
+                              System.out.println("Ha Ganado el jugador 2");
+                            }
                              
                              
                          }
                          else{
-                             System.out.println("Empate");
+                           System.out.println("Empate");
                          }
                      }
                      else{
-                       System.out.println("Turno de player 2");
-                     System.out.println("2 "+t1.getCasillas(0,2).getFicha()+" | "+t1.getCasillas(1,2).getFicha()+" | "+t1.getCasillas(2,2).getFicha());
-                     System.out.println("  --|---|--");
-                     System.out.println("1 "+t1.getCasillas(0,1).getFicha()+" | "+t1.getCasillas(1,1).getFicha()+" | "+t1.getCasillas(2,1).getFicha());
-                     System.out.println("  --|---|--");
-                     System.out.println("0 "+t1.getCasillas(0,0).getFicha()+" | "+t1.getCasillas(1,0).getFicha()+" | "+t1.getCasillas(2,0).getFicha());
-                     System.out.println("  0   1   2");
-                     System.out.println("");
-                     System.out.println("Inserta la posicion x");
-                     int x2 = sc.nextInt();
-                     sc.nextLine();
-                     System.out.println("Inserta la posicion y");
-                     int y2 = sc.nextInt();
-                     sc.nextLine();
-                     Posicion p2 = new Posicion(x2,y2);
-                     Casilla c2 = new Casilla('o');
-                     t1.setCasilla(c2, p2);
-                     if(j1.GameOver()==true){
-                         if(j1.whoWon()!=' '){
+                        System.out.println("Turno de player 2");
+                        System.out.println("Y");  
+                        System.out.println("2 "+t1.getCasillas(0,2).getFicha()+" | "+t1.getCasillas(1,2).getFicha()+" | "+t1.getCasillas(2,2).getFicha());
+                        System.out.println("  --|---|--");
+                        System.out.println("1 "+t1.getCasillas(0,1).getFicha()+" | "+t1.getCasillas(1,1).getFicha()+" | "+t1.getCasillas(2,1).getFicha());
+                        System.out.println("  --|---|--");
+                        System.out.println("0 "+t1.getCasillas(0,0).getFicha()+" | "+t1.getCasillas(1,0).getFicha()+" | "+t1.getCasillas(2,0).getFicha());
+                        System.out.println("  0   1   2   X");
+                        System.out.println("");
+                        System.out.println("Inserta la posicion y");
+                        int y2 = sc.nextInt();
+                        sc.nextLine();
+                        System.out.println("Inserta la posicion x");
+                        int x2 = sc.nextInt();
+                        sc.nextLine();
+                        Posicion p2 = new Posicion(x2,y2);
+                        Casilla c2 = new Casilla('o');
+                        t1.setCasilla(c2, p2);
+                        if(j1.GameOver()==true){
+                          if(j1.whoWon()!=' '){
+                            System.out.println("Y");
                             System.out.println("2 "+t1.getCasillas(0,2).getFicha()+" | "+t1.getCasillas(1,2).getFicha()+" | "+t1.getCasillas(2,2).getFicha());
                             System.out.println("  --|---|--");
                             System.out.println("1 "+t1.getCasillas(0,1).getFicha()+" | "+t1.getCasillas(1,1).getFicha()+" | "+t1.getCasillas(2,1).getFicha());
                             System.out.println("  --|---|--");
                             System.out.println("0 "+t1.getCasillas(0,0).getFicha()+" | "+t1.getCasillas(1,0).getFicha()+" | "+t1.getCasillas(2,0).getFicha());
-                            System.out.println("  0   1   2");
+                            System.out.println("  0   1   2   X");
+                            System.out.println("");
                              char ficha = j1.whoWon();
                              if(ficha=='x'){
                                  System.out.println("Ha Ganado el jugador 1");
@@ -115,11 +121,11 @@ public class Main {
                              }
                              
                              
-                         }
-                         else{
+                            }
+                            else{
                              System.out.println("Empate");
-                         }
-                     }  
+                            }
+                        }  
                      }
                      
                  }
